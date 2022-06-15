@@ -65,11 +65,11 @@ handleSetToTrue = (id) => {
 
 render(){
   return (
-    <div><button onClick={()=>{window.sessionStorage.clear(); window.location.reload();}}> Clear Memory</button>
+    <div>
     <Router routes={routes} location={location}>
          <Outlet />
       </Router>
-      </div>
+    </div>
   );
         }
 }

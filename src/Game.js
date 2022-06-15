@@ -94,6 +94,11 @@ handleSetToTrue = (id) => {
 render()
 {window.sessionStorage.setItem('state', JSON.stringify(this.state));
   return (
+    <div><button onClick={()=>{window.sessionStorage.clear(); window.location.reload();}}> Clear Memory</button>
+    <div class="min-h-screen flex items-center bg-purple-500">
+    <div class="flex-1 max-w-4xl mx-auto p-10">
+      
+  
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-6 md:grid-cols-6 md:gap-4">
         {this.state.questions.map( question =>{
         if(question.id%6===0){
@@ -129,6 +134,9 @@ render()
         }
         )}
       </ul>
+      </div>
+  </div>
+  </div>
   );
         }
 }
