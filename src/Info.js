@@ -1,10 +1,9 @@
-
-import logo from './logo.svg';
 import './App.css';
 import React, { Component,useState } from 'react';
 import questions from './components/questions.json'
 import { ReactLocation, Router, Outlet, Link, useNavigate } from "react-location";
 import Game from "./Game"
+import './Info.css';
 
 const location = new ReactLocation();
 
@@ -20,10 +19,18 @@ const Info = (props) => {
   var text = "See Answer"
   const el = JSON.parse(window.sessionStorage.getItem('state'));
   return (
-    <div>
-      <h1>{el.questions[el.curQ].question}</h1>
-      <h2><button onClick={()=>{alert(el.questions[el.curQ].answer);}}>{text}</button></h2>
-      <Link to = "/">Go back to board</Link>
+    <div className="min-h-screen flex items-center ">
+    <div className="center container">
+      <ul className = "center">
+        <li>{el.questions[el.curQ].question}</li>
+      </ul>
+    </div>
+    <div className="bottom">
+        <ul className="sm:grid-cols-6 md:grid-cols-6">
+        <li className="outline"><button onClick={()=>{alert(el.questions[el.curQ].answer);}}>{text}</button></li>
+        <li className="outline"><Link to = "/">Go back to board</Link></li>
+      </ul>
+      </div>
     </div>
   );
 };

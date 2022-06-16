@@ -1,10 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { Component,useState } from 'react';
 import questions from './components/questions.json'
 import { ReactLocation, Router, Outlet, Link, useNavigate } from "react-location";
-import Info from "./Info";
-
 
 const location = new ReactLocation();
 
@@ -21,7 +18,7 @@ const routes = [
 
 const Categories = (props) => {
   return (
-    <li className="bg-white rounded-lg shadow-xl "> CATEGORY TILE<div class="h-24"></div></li>
+    <li className="bg-white rounded-lg shadow-xl "> {props.category}<div class="h-24"></div></li>
   );
 }
 
@@ -46,24 +43,12 @@ const UsedTile = (props) => {
 class Game extends React.Component {
 constructor(props) {
   super(props);
-  
-  this.state =  {questions: questions.jeo};
-
-        if(window.sessionStorage.getItem('state')!=null){
+  this.state =  {questions: questions};
+      if(window.sessionStorage.getItem('state')!=null){
         this.state =  JSON.parse(window.sessionStorage.getItem('state'));}
-            else{
-        this.state =  {questions: questions.jeo};}
-    
-
-
+      else{
+        this.state =  {questions: questions};}
 }
-
-// setState(state) {
-//     window.localStorage.setItem('state', JSON.stringify(this.state));
-//     //console.log(JSON.stringify(this.state))
-//     super.setState(this.state);
-//   }
-
 handleSetToTrue = (id) => {
   this.setState( prevState => {
     return{
@@ -88,22 +73,20 @@ handleSetToTrue = (id) => {
   }); 
   console.log(JSON.stringify(this.state));
   window.sessionStorage.setItem('state', JSON.stringify(this.state));
-  //console.log(JSON.stringify(this.state));
 }
 
 render()
-{window.sessionStorage.setItem('state', JSON.stringify(this.state));
+{
+  window.sessionStorage.setItem('state', JSON.stringify(this.state));
   return (
     <div><button onClick={()=>{window.sessionStorage.clear(); window.location.reload();}}> Clear Memory</button>
-    <div class="min-h-screen flex items-center bg-purple-500">
-    <div class="flex-1 max-w-4xl mx-auto p-10">
-      
-  
+    <div className="min-h-screen flex items-center bg-purple-500">
+    <div className="flex-1 max-w-4xl mx-auto p-10">
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-6 md:grid-cols-6 md:gap-4">
         {this.state.questions.map( question =>{
         if(question.id%6===0){
           return(
-            <Categories/>
+            <Categories category = {question.category}/>
           );
         }
         else{
