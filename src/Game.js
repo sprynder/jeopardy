@@ -1,13 +1,8 @@
 import "./App.css";
-import React, { Component, useState } from "react";
-import questions from "./components/questions.json";
-import {
-  ReactLocation,
-  Router,
-  Outlet,
-  Link,
-  useNavigate,
-} from "react-location";
+import React, { useEffect, useState } from "react";
+import { db } from "./firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { ReactLocation, useNavigate, useMatch } from "react-location";
 
 const location = new ReactLocation();
 
@@ -56,23 +51,21 @@ const UsedTile = (props) => {
   );
 };
 
-class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { questions: questions };
-    if (window.sessionStorage.getItem("state") != null) {
-      this.state = JSON.parse(window.sessionStorage.getItem("state"));
-    } else {
-      this.state = { questions: questions };
-    }
+// class Game extends React.Component {
+const Game = () => {
+  const {
+    params: { gameId },
+  } = useMatch();
 
-    // if (window.sessionStorage.getItem("state") != null) {
-    //   this.state = JSON.parse(window.sessionStorage.getItem("state"));
-    // } else {
-    //   this.state = {};
-    // }
-  }
-  handleSetToTrue = (id) => {
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    getDoc(doc(db, `/games/${gameId}`)).then((docSnap) => {
+      setQuestions(docSnap.data().questions);
+    });
+  }, [gameId]);
+
+  const handleSetToTrue = (id) => {
     this.setState((prevState) => {
       return {
         questions: prevState.questions.map((question) => {
@@ -92,75 +85,57 @@ class Game extends React.Component {
         curQ: id,
       };
     });
-    //console.log(JSON.stringify(this.state));
-    window.sessionStorage.setItem("state", JSON.stringify(this.state));
-    console.log(JSON.stringify(this.state));
   };
 
-  render() {
-    console.log(this.state);
-    window.sessionStorage.setItem("state", JSON.stringify(this.state));
-    return sessionStorage.generated == "true" ? (
-      <div>
-        <button
-          onClick={() => {
-            window.sessionStorage.clear();
-            window.location.reload();
-          }}
-        >
-          {" "}
-          Reset Game
-        </button>
-        <div className="min-h-screen flex items-center bg-purple-500">
-          <div className="flex-1 max-w-4xl mx-auto p-10">
-            <ul className="grid grid-cols-1 gap-2 sm:grid-cols-6 md:grid-cols-6 md:gap-4">
-              {this.state.questions.map((question) => {
-                if (question.id % 6 === 0) {
-                  return <Categories category={question.category} />;
-                } else {
-                  if (question.played === false) {
-                    return (
-                      // <div>
-                      <NewTile
-                        onClick={this.handleSetToTrue}
-                        name={question.price}
-                        answer={question.answer}
-                        used={question.played}
-                        price={question.price}
-                        id={question.id}
-                      />
-                      //<Link to = "/Info"> See Card</Link></div>
-                    );
-                  } else {
-                    return (
-                      <UsedTile
-                        name={question.question}
-                        answer={question.answer}
-                        used={question.played}
-                        price={question.price}
-                        id={question.id}
-                      />
-                    );
-                  }
-                }
-              })}
-            </ul>
-          </div>
-        </div>
-      </div>
-    ) : (
+  return (
+    <div>
       <button
-        className="center container"
         onClick={() => {
-          setTimeout(() => {
-            window.location.reload();
-          }, 2000);
+          window.sessionStorage.clear();
+          window.location.reload();
         }}
       >
-        Click here to load game! It may take a second or two to load.
+        {" "}
+        Reset Game
       </button>
-    );
-  }
-}
+      <div className="min-h-screen flex items-center bg-purple-500">
+        <div className="flex-1 max-w-4xl mx-auto p-10">
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-6 md:grid-cols-6 md:gap-4">
+            {questions.map((question) => {
+              if (question.id % 6 === 0) {
+                return <Categories category={question.category} />;
+              } else {
+                if (question.played === false) {
+                  return (
+                    // <div>
+                    <NewTile
+                      onClick={handleSetToTrue}
+                      name={question.price}
+                      answer={question.answer}
+                      used={question.played}
+                      price={question.price}
+                      id={question.id}
+                    />
+                    //<Link to = "/Info"> See Card</Link></div>
+                  );
+                } else {
+                  return (
+                    <UsedTile
+                      name={question.question}
+                      answer={question.answer}
+                      used={question.played}
+                      price={question.price}
+                      id={question.id}
+                    />
+                  );
+                }
+              }
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Game;

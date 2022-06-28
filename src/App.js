@@ -1,77 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import React, { Component,useState } from 'react';
-import questions from './components/questions.json'
-import { ReactLocation, Router, Outlet, Link, useNavigate, useMatch } from "react-location";
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
+import questions from "./components/questions.json";
+import { ReactLocation, Router, Outlet, useMatch } from "react-location";
 import Info from "./Info";
+import Home from "./Home";
 import Game from "./Game";
-import generate from './questionGenerator';
 
 const location = new ReactLocation();
 
 const routes = [
   {
+    path: "/",
+    element: <Home />,
+  },
+  {
     path: "/info",
     element: <Info />,
   },
   {
-    path: "/",
+    path: "/play/:gameId",
     element: <Game />,
-  }
+  },
 ];
 
-
-const Quest =() => {
-  const params = useMatch().params;
-
+const App = () => {
   return (
-    <div>
-        Question page: {}
-    </div>
-  )
-}
-
-class App extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = {
-    questions: questions.jeo,
-    curQ: -1
-  };
-}
-
-handleSetToTrue = (id) => {
-  this.setState( prevState => {
-    return{
-      questions: prevState.questions.map( question =>{
-        if(id!==question.id)
-        {
-          return {question}
-        }
-        else{
-          return{
-            id:  question.id,
-            question: question.question,
-            answer: question.answer,
-            played: true,
-            price:  question.price
-          }
-        }
-      }),
-      curQ: id
-    };
-  });
-}
-
-render(){
-  return (
-    <div>
     <Router routes={routes} location={location}>
-         <Outlet />
-      </Router>
-    </div>
+      <Outlet />
+    </Router>
   );
-        }
-}
+};
 
 export default App;

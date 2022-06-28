@@ -59,13 +59,8 @@ async function generate() {
         counter++;
       }
     }
-    window.sessionStorage.setItem(
-      "state",
-      JSON.stringify({ questions: dictArr })
-    );
-    console.log("TestTESt");
-    console.log(JSON.stringify({ questions: dictArr }));
-    sessionStorage.generated = "true";
+
+    return { questions: dictArr };
   }
 }
 
