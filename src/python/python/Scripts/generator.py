@@ -27,9 +27,9 @@ valeArr = [200,400,600,800,1000]
 counter = 0
 for item in questions:
     if counter%6==0:
-        dictArr.append({'id':counter,'question':"CATEGORY",'answer': 'undefined','played':False,'price':'undefined'['value'],'category':item['category']['title']})
+        dictArr.append({'id':counter,'question':"CATEGORY",'answer': 'undefined','played':False,'price':'undefined','category':item['category']['title']})
         counter+=1
     dictArr.append({'id':counter,'question':item['question'],'answer':item['answer'],'played':False,'price':item['value'],'category':item['category']['title']})
     counter+=1
-with open ("./src/components/sample.json","w") as outfile:  
+with open ("./jeopardy-app/src/components/sample.json","w") as outfile:  
     json.dump(dictArr, outfile, indent = 4)

@@ -5,7 +5,7 @@ import questions from './components/questions.json'
 import { ReactLocation, Router, Outlet, Link, useNavigate, useMatch } from "react-location";
 import Info from "./Info";
 import Game from "./Game";
-
+import generate from './questionGenerator';
 
 const location = new ReactLocation();
 

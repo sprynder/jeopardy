@@ -1,241 +1,242 @@
-[{
-    "id": 0,
-    "question": "",
-    "answer": "wind",
-    "played": false,
-    "price": 400,
-    "category": "Nathan for you"
-},
-{
-    "id": 1,
-    "question": "Nathan's last name",
-    "answer": "what is Fielder?",
-    "played": false,
-    "price": 200,
-    "category": "Nathan for you"
-},
-{
-    "id": 2,
-    "question": "The celebrity that William Heath impersonates several times throughout the show.",
-    "answer": "who is Bill Gates?",
-    "played": false,
-    "price": 400,
-    "category": "Nathan for you"
-},
-{
-    "id": 3,
-    "question": "The instrument used to produce a hit-song in a ploy to bypass customs duties",
-    "answer": "What is a smoke detector?",
-    "played": false,
-    "price": 600,
-    "category": "Nathan for you"
-},
-{
-    "id": 4,
-    "question": "Nathan's apparel brand that acknowledges the holocaust",
-    "answer": "What is Summit Ice?",
-    "played": false,
-    "price": 800,
-    "category": "Nathan for you"
-},
-{
-    "id": 5,
-    "question": "The Alma Mater of William Heath, the Bill Gates impersonator",
-    "answer": "What is Arkansas",
-    "played": false,
-    "price": 1000,
-    "category": "Nathan for you"
-},
-{
-    "id": 6,
-    "question": "K-Optional Software's current birthday boy",
-    "answer": "Who is Michael Considine",
-    "played": false,
-    "price": 200,
-    "category": "K-Optional Trivia"
-},
-{
-    "id": 7,
-    "question": "The branch of the military in which Chris served 6 years",
-    "answer": "The Air Force",
-    "played": false,
-    "price": 200,
-    "category": "K-Optional Trivia"
-},
-{
-    "id": 8,
-    "question": "The year that James Liu was born",
-    "answer": "What is 2003",
-    "played": false,
-    "price": 400,
-    "category": "K-Optional Trivia"
-},
-{
-    "id": 9,
-    "question": "The metropolis near David Kalina's Frederick home (Not Boulder or Denver)",
-    "answer": "What is Longmont",
-    "played": false,
-    "price": 600,
-    "category": "K-Optional Trivia"
-},
-{
-    "id": 10,
-    "question": "A hazing technique apparently employed in some parts of the Air Force",
-    "answer": "What is telling the newbies to pop every bubble on the celophane wrap?",
-    "played": false,
-    "price": 800,
-    "category": "K-Optional Trivia"
-},
-{
-    "id": 11,
-    "question": "David's swoll friend who also writes code.",
-    "answer": "Who is Matt Welborne?",
-    "played": false,
-    "price": 1000,
-    "category": "K-Optional Trivia"
-},
-{
-    "id": 12,
-    "question": "",
-    "answer": "Thor",
-    "played": false,
-    "price": 200,
-    "category": "Software education"
-},
-{
-    "id": 13,
-    "question": "The application that every member of K-Optional Software has used to help learn how to write code.",
-    "answer": "What is (Team) Treehouse?",
-    "played": false,
-    "price": 200,
-    "category": "Software education"
-},
-{
-    "id": 14,
-    "question": "<a href=\"https://uploads.teamtreehouse.com/production/profile-photos/26170/avatar_TeacherShoot-Andrew.jpg\"> K-Optional Software's favorite programming teacher <a/>",
-    "answer": "Who is Chalkers?",
-    "played": false,
-    "price": 400,
-    "category": "Software education"
-},
-{
-    "id": 15,
-    "question": "The bootcamp of choice for a Mr. Schillinger",
-    "answer": "What is Hack Reactor?",
-    "played": false,
-    "price": 600,
-    "category": "Software education"
-},
-{
-    "id": 16,
-    "question": "The bootcamp of choice for a Mr. Kalina",
-    "answer": "What is General Assembly?",
-    "played": false,
-    "price": 800,
-    "category": "Software education"
-},
-{
-    "id": 17,
-    "question": "The educational computer-science language of choice for a Mr. (Michael) Considine",
-    "answer": "What is Racket?",
-    "played": false,
-    "price": 1000,
-    "category": "Software education"
-},
-{
-    "id": 18,
-    "question": "A flag that creates a new branch while checking it out, in conjunction with the git checkout command",
-    "answer": "What is -b?",
-    "played": false,
-    "price": 200,
-    "category": "Git"
-},
-{
-    "id": 19,
-    "question": "Like git merge, but by rewinding then replaying commits on-top of a base branch.",
-    "answer": "What is rebase?",
-    "played": false,
-    "price": 200,
-    "category": "Git"
-},
-{
-    "id": 20,
-    "question": "The syntax \"^..\" in conjunction with this command selects multiple commits",
-    "answer": "What is cherry-pick?",
-    "played": false,
-    "price": 400,
-    "category": "Git"
-},
-{
-    "id": 21,
-    "question": "The type of merges we use on Git remotes",
-    "answer": "What is a squash merge?",
-    "played": false,
-    "price": 600,
-    "category": "Git"
-},
-{
-    "id": 22,
-    "question": "The inventor of Git",
-    "answer": "Linus Torvalds",
-    "played": false,
-    "price": 800,
-    "category": "Git"
-},
-{
-    "id": 23,
-    "question": "A much maligned alternative to git, used by certain health-software companies",
-    "answer": "What is subversion?",
-    "played": false,
-    "price": 1000,
-    "category": "Git"
-},
-{
-    "id": 24,
-    "question": "The private company that spawned React",
-    "answer": "What is Facebook?",
-    "played": false,
-    "price": 200,
-    "category": "React"
-},
-{
-    "id": 25,
-    "question": "The OG flux-state-management system in React, created by Dan Abramov",
-    "answer": "What is Redux?",
-    "played": false,
-    "price": 200,
-    "category": "React"
-},
-{
-    "id": 26,
-    "question": "A modification in React 18 obviates the need to do this",
-    "answer": "What is import React from react?",
-    "played": false,
-    "price": 400,
-    "category": "React"
-},
-{
-    "id": 27,
-    "question": "Using this React Native component reduces mount time by a factor of 5 relative to mapped lists",
-    "answer": "What is Flatlist?",
-    "played": false,
-    "price": 600,
-    "category": "React"
-},
-{
-    "id": 28,
-    "question": "The year that Hooks were released (stable, not beta)",
-    "answer": "What is 2019",
-    "played": false,
-    "price": 800,
-    "category": "React"
-},
-{
-    "id": 29,
-    "question": "What is the loan npm module that React is dependent on?",
-    "answer": "loose-envify",
-    "played": false,
-    "price": 1000,
-    "category": "transformed food"
-}
+[
+    {
+        "id": 0,
+        "question": "CATEGORY",
+        "answer": "undefined",
+        "played": false,
+        "price": "undefined",
+        "category": "classical works' other names"
+    },
+    {
+        "id": 1,
+        "question": "Schubert's symphony No. 8 in B minor is called this because only 2 movements were composed",
+        "answer": "the \"Unfinished Symphony\"",
+        "played": false,
+        "price": 200,
+        "category": "classical works' other names"
+    },
+    {
+        "id": 2,
+        "question": "It wasn't until 9 years after Beethoven's death that his piano sonata in C-sharp minor got this nickname",
+        "answer": "the \"Moonlight Sonata\"",
+        "played": false,
+        "price": 400,
+        "category": "classical works' other names"
+    },
+    {
+        "id": 3,
+        "question": "Schumann wrote his Symphony No. 1 in B flat, better known as this, in the winter, not the season of its nickname",
+        "answer": "the \"Spring Symphony\"",
+        "played": false,
+        "price": 600,
+        "category": "classical works' other names"
+    },
+    {
+        "id": 4,
+        "question": "It's the planetary nickname of Mozart's last symphony, No. 41 in C major",
+        "answer": "the \"Jupiter Symphony\"",
+        "played": false,
+        "price": 800,
+        "category": "classical works' other names"
+    },
+    {
+        "id": 5,
+        "question": "Shostakovich's Symphony No. 7 in C major is better known by this name, the city under Nazi siege while he wrote it",
+        "answer": "the \"Leningrad Symphony\"",
+        "played": false,
+        "price": 1000,
+        "category": "classical works' other names"
+    },
+    {
+        "id": 6,
+        "question": "CATEGORY",
+        "answer": "undefined",
+        "played": false,
+        "price": "undefined",
+        "category": "just deserts"
+    },
+    {
+        "id": 7,
+        "question": "This desert in North Africa is the largest in the world",
+        "answer": "the Sahara",
+        "played": false,
+        "price": 200,
+        "category": "just deserts"
+    },
+    {
+        "id": 8,
+        "question": "Part of the Chihuahuan Desert lies in Chihuahua, one of this country's most prosperous states",
+        "answer": "Mexico",
+        "played": false,
+        "price": 400,
+        "category": "just deserts"
+    },
+    {
+        "id": 9,
+        "question": "This California desert valley was named by gold seekers, many of whom didn't survive the crossing of it",
+        "answer": "Death Valley",
+        "played": false,
+        "price": 600,
+        "category": "just deserts"
+    },
+    {
+        "id": 10,
+        "question": "The Patagonian Desert lies west of Buenos Aires in this country",
+        "answer": "Argentina",
+        "played": false,
+        "price": 800,
+        "category": "just deserts"
+    },
+    {
+        "id": 11,
+        "question": "The Gobi, the largest desert in Asia, is in southern Mongolia & the northern part of this country",
+        "answer": "China",
+        "played": false,
+        "price": 1000,
+        "category": "just deserts"
+    },
+    {
+        "id": 12,
+        "question": "CATEGORY",
+        "answer": "undefined",
+        "played": false,
+        "price": "undefined",
+        "category": "scrambled gods & goddesses"
+    },
+    {
+        "id": 13,
+        "question": "A hunky hurler:ROTH",
+        "answer": "Thor",
+        "played": false,
+        "price": 200,
+        "category": "scrambled gods & goddesses"
+    },
+    {
+        "id": 14,
+        "question": "She's Mrs. Osiris:SI SI",
+        "answer": "Isis",
+        "played": false,
+        "price": 400,
+        "category": "scrambled gods & goddesses"
+    },
+    {
+        "id": 15,
+        "question": "Apollo's sister:A MISTER",
+        "answer": "Artemis",
+        "played": false,
+        "price": 600,
+        "category": "scrambled gods & goddesses"
+    },
+    {
+        "id": 16,
+        "question": "Babylonian babe:HI STAR",
+        "answer": "Ishtar",
+        "played": false,
+        "price": 800,
+        "category": "scrambled gods & goddesses"
+    },
+    {
+        "id": 17,
+        "question": "He's swift of foot:MY CURER",
+        "answer": "Mercury",
+        "played": false,
+        "price": 1000,
+        "category": "scrambled gods & goddesses"
+    },
+    {
+        "id": 18,
+        "question": "CATEGORY",
+        "answer": "undefined",
+        "played": false,
+        "price": "undefined",
+        "category": "composers & their kin"
+    },
+    {
+        "id": 19,
+        "question": "Though he wrote a number of operas, Michael Haydn is far less famous than this older brother",
+        "answer": "Joseph Haydn",
+        "played": false,
+        "price": 200,
+        "category": "composers & their kin"
+    },
+    {
+        "id": 20,
+        "question": "His 18th child, Johann Christian, wrote operas for the King's Theatre in London",
+        "answer": "Johann Sebastian Bach",
+        "played": false,
+        "price": 400,
+        "category": "composers & their kin"
+    },
+    {
+        "id": 21,
+        "question": "Both the junior & senior Johanns in this Viennese family conducted dance music as well as composed it",
+        "answer": "Strauss",
+        "played": false,
+        "price": 600,
+        "category": "composers & their kin"
+    },
+    {
+        "id": 22,
+        "question": "Ernest II, Duke of Saxe-Coburg-Gotha, was a composer as well as the brother-in-law of this British queen",
+        "answer": "Queen Victoria",
+        "played": false,
+        "price": 800,
+        "category": "composers & their kin"
+    },
+    {
+        "id": 23,
+        "question": "We hope that Liszt was on the guest list when his daughter Cosima married this \"Die Walkure\" composer in 1870",
+        "answer": "Wagner",
+        "played": false,
+        "price": null,
+        "category": "composers & their kin"
+    },
+    {
+        "id": 24,
+        "question": "CATEGORY",
+        "answer": "undefined",
+        "played": false,
+        "price": "undefined",
+        "category": "kids rule!"
+    },
+    {
+        "id": 25,
+        "question": "Henry VI was just 9 months old when he succeeded his dad, Henry V, as king of this in 1422",
+        "answer": "England",
+        "played": false,
+        "price": 200,
+        "category": "kids rule!"
+    },
+    {
+        "id": 26,
+        "question": "This \"boy king\" was about 9 years old when he became a pharaoh around 1333 B.C.",
+        "answer": "Tutankhamen",
+        "played": false,
+        "price": 400,
+        "category": "kids rule!"
+    },
+    {
+        "id": 27,
+        "question": "Fyodor III was 14 in 1676 when he ascended to the throne of Russia & took this Russian title",
+        "answer": "Tsar Fyodor",
+        "played": false,
+        "price": 600,
+        "category": "kids rule!"
+    },
+    {
+        "id": 28,
+        "question": "Jeanne de Navarre was 13 when she became this country's queen in 1285",
+        "answer": "France",
+        "played": false,
+        "price": 800,
+        "category": "kids rule!"
+    },
+    {
+        "id": 29,
+        "question": "Isabella II, the daughter of Ferdinand VII, was just under 3 years old when she was proclaimed queen of this in 1833",
+        "answer": "Spain",
+        "played": false,
+        "price": 1000,
+        "category": "kids rule!"
+    }
 ]
