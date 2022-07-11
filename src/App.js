@@ -15,7 +15,7 @@ const routes = [
     element: <Home />,
   },
   {
-    path: "/info",
+    path: "/play/:gameId/:info",
     element: <Info />,
   },
   {

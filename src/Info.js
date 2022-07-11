@@ -22,12 +22,15 @@ const routes = [
 
 const Info = (props) => {
   var text = "See Answer";
-  const el = JSON.parse(window.sessionStorage.getItem("state"));
+  const item = window.sessionStorage.getItem("state");
+  const id = JSON.parse(window.sessionStorage.getItem("gameID"));
+  //console.log(item);
+  const el = JSON.parse(item);
   return (
     <div className="min-h-screen flex items-center ">
       <div className="center container">
         <ul className="center">
-          <li>{el.questions[el.curQ].question}</li>
+          <li>{el.question}</li>
         </ul>
       </div>
       <div className="bottom">
@@ -35,14 +38,14 @@ const Info = (props) => {
           <li className="outline">
             <button
               onClick={() => {
-                alert(el.questions[el.curQ].answer);
+                alert(el.answer);
               }}
             >
               {text}
             </button>
           </li>
           <li className="outline">
-            <Link to="/">Go back to board</Link>
+            <Link to={`/play/${id}`}>Go back to board</Link>
           </li>
         </ul>
       </div>

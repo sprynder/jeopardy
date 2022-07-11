@@ -1,8 +1,9 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { db } from "./firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, addDoc, collection, setDoc, onSnapshot } from "firebase/firestore";
 import { ReactLocation, useNavigate, useMatch } from "react-location";
+import Home from "./Home";
 
 const location = new ReactLocation();
 
@@ -35,7 +36,7 @@ const NewTile = (props) => {
       className="bg-white rounded-lg shadow-xl hover:bg-sky-700"
       onClick={() => {
         props.onClick(props.id);
-        navigate({ to: "./info", replace: true });
+        navigate({ to: `./info/${props.id}`, replace: true });
       }}
     >
       <div class="h-24">{props.price}</div>
@@ -58,35 +59,60 @@ const Game = () => {
   } = useMatch();
 
   const [questions, setQuestions] = useState([]);
+  const [current, setCurrent] = useState(-1);
+
+  const unsub = onSnapshot(doc(db,'games',`${gameId}`), (docSnap)=>{
+    setQuestions(docSnap.data().questions);
+    setCurrent(docSnap.data().current);
+    window.sessionStorage.setItem("gameID",JSON.stringify(gameId));
+  }, [gameId]);
+
+
+  // useEffect(() =>{
+  //   doc(db,"games",`${gameId}`).onSnapshot(docSnap => {
+  //     setQuestions(docSnap.data().questions);
+  //     setCurrent(docSnap.data().current);
+  //     window.sessionStorage.setItem("gameID",JSON.stringify(gameId));
+  // });
+  // });
 
   useEffect(() => {
-    getDoc(doc(db, `/games/${gameId}`)).then((docSnap) => {
+     getDoc(doc(db, `/games/${gameId}`)).then((docSnap) => {
       setQuestions(docSnap.data().questions);
+      setCurrent(docSnap.data().current);
+      window.sessionStorage.setItem("gameID",JSON.stringify(gameId));
     });
   }, [gameId]);
 
-  const handleSetToTrue = (id) => {
-    this.setState((prevState) => {
-      return {
-        questions: prevState.questions.map((question) => {
-          if (id !== question.id) {
-            return question;
-          } else {
-            const newState = {
-              id: question.id,
-              question: question.question,
-              answer: question.answer,
-              played: true,
-              price: question.price,
-            };
-            return newState;
-          }
-        }),
-        curQ: id,
-      };
-    });
-  };
 
+  //console.log(questions.questions);
+  const handleSetToTrue = async (id) => {
+    const newQ =  questions.map((question) => {
+      if (id !== question.id) {
+        return question;
+      } else {
+        const newState = {
+          id: question.id,
+          question: question.question,
+          answer: question.answer,
+          played: true,
+          price: question.price,
+        };
+        return newState;
+      }
+    })
+    setQuestions(newQ);
+    setCurrent(id);
+    //console.log(questions[id]);
+    window.sessionStorage.setItem("state",JSON.stringify(questions[id]));
+   await setDoc(doc(db, `games`, `${[gameId]}`), {questions: newQ, curQ:id});
+   const testRef =  await getDoc(doc(db, `/games/${gameId}`));
+
+   //console.log(questions);
+   //console.log(testRef.data());
+  };
+ // console.log("Questions are: ");
+ // console.log(questions);
   return (
     <div>
       <button
