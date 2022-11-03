@@ -57,16 +57,18 @@ const Game = () => {
   const {
     params: { gameId },
   } = useMatch();
-
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(-1);
 
   const unsub = onSnapshot(doc(db,'games',`${gameId}`), (docSnap)=>{
-    setQuestions(docSnap.data().questions);
-    setCurrent(docSnap.data().current);
-    window.sessionStorage.setItem("gameID",JSON.stringify(gameId));
-  }, [gameId]);
 
+    setQuestions(docSnap.data().questions);
+    setCurrent(docSnap.data().curQ);
+    window.sessionStorage.setItem("gameID",JSON.stringify(gameId));
+    
+  }, [gameId]);
+     
 
   // useEffect(() =>{
   //   doc(db,"games",`${gameId}`).onSnapshot(docSnap => {
